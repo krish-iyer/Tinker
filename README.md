@@ -1,4 +1,3 @@
 # Tinker Processor
 
- - [Specifications](docs/SPECIFICATION.md)
- - [Roadmap](docs/ROADMAP.md)
+ - [Documentation](https://github.com/krish-iyer/Tinker/wiki)
