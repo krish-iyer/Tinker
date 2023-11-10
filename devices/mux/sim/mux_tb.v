@@ -39,17 +39,17 @@ mux mux_inst(
 );
 
 integer sim_out;
-integer muls_actual;
+integer mux_actual;
 
 always #1 clk = ~clk;
 
 initial begin
     sim_out = $fopen("/home/krishnan/tinker_ws/tests/mux_sim_out.txt","w");
-    muls_actual = $fopen("/home/krishnan/tinker_ws/tests/mux_true_out.txt","r");
+    mux_actual = $fopen("/home/krishnan/tinker_ws/tests/mux_true_out.txt","r");
     clk = 0;
-    $fscanf(muls_actual,"%d %d %d %d %d %d\n", in1, in2, in3, in4, ctrl, place_holder);
-    while (!$feof(muls_actual)) begin
-        #2 $display("in1: %0d ; in2: %0d ; in3: %0d ; in4: %0d ; ctrl: %0d ; out : %0d\n",in1, in2, in3, in4, ctrl, out); $fwrite(sim_out, "%0d %0d %0d %0d %0d %0d\n",in1, in2, in3, in4, ctrl, out); $fscanf(muls_actual,"%d %d %d %d %d %d\n", in1, in2, in3, in4, ctrl, place_holder);
+    $fscanf(mux_actual,"%d %d %d %d %d %d\n", in1, in2, in3, in4, ctrl, place_holder);
+    while (!$feof(mux_actual)) begin
+        #2 $display("in1: %0d ; in2: %0d ; in3: %0d ; in4: %0d ; ctrl: %0d ; out : %0d\n",in1, in2, in3, in4, ctrl, out); $fwrite(sim_out, "%0d %0d %0d %0d %0d %0d\n",in1, in2, in3, in4, ctrl, out); $fscanf(mux_actual,"%d %d %d %d %d %d\n", in1, in2, in3, in4, ctrl, place_holder);
     end
 #1 $display("in1: %0d ; in2: %0d ; in3: %0d ; in4: %0d ; ctrl: %0d ; out : %0d",in1, in2, in3, in4, ctrl, out); $fwrite(sim_out, "%0d %0d %0d %0d %0d %0d\n",in1, in2, in3, in4, ctrl, out); $fclose(sim_out);
 #1000 $finish;
