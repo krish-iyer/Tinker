@@ -15,10 +15,21 @@ uint64_t twos_compliment(int64_t num){
     }
 }
 
-int main(){
+int main(int argc, char* argv[]){
 
     FILE *true_out;
-    true_out = fopen("muls_true_out.txt", "w");
+    
+    if(argc != 2){
+        printf("Error, need one argument \n");
+        return 0;
+    }
+    else if(strcmp(argv[1],"-h") == 0){
+        printf("Usage           - ./mul_test true_out.txt \n");
+        printf("File Format     - op1 op2 rst\\n\n");
+        return 0;
+    }
+
+    true_out = fopen(argv[1], "w");
     
     int32_t a;
     int32_t b;
