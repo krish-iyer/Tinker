@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<inttypes.h>
+#include<string.h>
 
 #define MIN_NUM -5
 #define MAX_NUM 5
