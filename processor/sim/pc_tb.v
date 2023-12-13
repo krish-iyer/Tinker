@@ -34,37 +34,37 @@ module pc_tb();
     
     initial begin
         clk = 1;
-        #6;
+        #5;
         #1 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[5] == 64'd10) $display("inst#1 execution is a success");
             else  $display("inst#1 execution is a failure");
         
         #2 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[6] == 64'd3) $display("inst#2 execution is a success");
             else  $display("inst#2 execution is a failure");
         
-        #2 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[7] == 64'hFFF) $display("inst#3 execution is a success");
+        #3 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[7] == 64'hFFF) $display("inst#3 execution is a success");
             else  $display("inst#3 execution is a failure");
         
-        #2 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[8] == 64'h333) $display("inst#4 execution is a success");
+        #3 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[8] == 64'h333) $display("inst#4 execution is a success");
             else  $display("inst#4 execution is a failure");
         
-        #2 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[9] == 64'd3) $display("inst#5 execution is a success");
+        #3 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[9] == 64'd3) $display("inst#5 execution is a success");
             else  $display("inst#5 execution is a failure");
-        
-        #2 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[1] == 64'd13) $display("inst#6 execution is a success");
+        #4;
+        #3 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[1] == 64'd13) $display("inst#6 execution is a success");
             else  $display("inst#6 execution is a failure");
         
-        #2 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[2] == 64'd7) $display("inst#7 execution is a success");
+        #3 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[2] == 64'd7) $display("inst#7 execution is a success");
             else  $display("inst#7 execution is a failure");
    
-        #2 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[3] == 64'h333) $display("inst#8 execution is a success");
+        #3 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[3] == 64'h333) $display("inst#8 execution is a success");
             else  $display("inst#8 execution is a failure");
-        #2 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[4] == 64'hfff) $display("inst#9 execution is a success");
+        #3 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[4] == 64'hfff) $display("inst#9 execution is a success");
             else  $display("inst#9 execution is a failure: %d",decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[4]);
-        #2 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[1] == 64'hccc) $display("inst#10 execution is a success");
+        #3 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[1] == 64'hccc) $display("inst#10 execution is a success");
             else  $display("inst#10 execution is a failure");
-        #2 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[2] == 64'hfffffffffffff000) $display("inst#11 execution is a success");
+        #3 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[2] == 64'hfffffffffffff000) $display("inst#11 execution is a success");
             else  $display("inst#11 execution is a failure");
-        #2 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[3] == 64'h66) $display("inst#12 execution is a success");
+        #3 if (decoder_stage.decoder_inst.reg_stage_inst.register_file_inst.mem[3] == 64'h66) $display("inst#12 execution is a success");
             else  $display("inst#12 execution is a failure");
         #50 $finish;
 
