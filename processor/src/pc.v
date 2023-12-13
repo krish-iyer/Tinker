@@ -25,13 +25,12 @@ module pc(
     input stall_en
     );
     
- reg [8:0]addr = 0;
- reg [2:0] count=0;
+ reg [8:0] addr = 0;
+ reg [8:0] buff=0;
  always@(posedge clk) begin
-    count <= count + 1;
-    if(addr <= 13 && count == 2) begin
-        addr <= addr + 1;
-        count <= 0;
+    if(addr <= 13) begin
+        buff <= addr + 1;
+        addr <= buff;
     end
  end
  
@@ -41,6 +40,4 @@ module pc(
     .addr(addr)
  );
  
- 
-
 endmodule
